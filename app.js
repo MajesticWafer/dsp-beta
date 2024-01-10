@@ -1157,11 +1157,11 @@ function isScreenLandscape() {
 
 
 
-if (location.origin == 'https://ds.44670.org') {
+if (location.origin == 'https://majesticwafer.github.io') {
     if (isSaveSupported) {
         // Register Service Worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js').then(function (reg) {
+            navigator.serviceWorker.register('/dsp-beta/sw.js').then(function (reg) {
                 // registration worked
                 console.log('Registration succeeded. Scope is ' + reg.scope);
             }).catch(function (error) {

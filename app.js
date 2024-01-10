@@ -41,12 +41,13 @@ if (isIOS) {
         // To prevent users from frustration, we don't allow savegame on iOS unless the we are in the PWA mode.
         isSaveSupported = false
         var divIosHint = $id('ios-hint')
-        divIosHint.hidden = false
+        divIosHint.hidden = true
         divIosHint.style = 'position: absolute; bottom: 20px;'
-        $id('btn-choose-file').hidden = true
-        $id('welcome').hidden = true
+        $id('btn-choose-file').hidden = false
+        $id('welcome').hidden = false
     } else {
-        $id('ios-power-hint').hidden = false
+        $id('ios-power-hint').hidden = true
+        $id('welcome').hidden = false
     }
 }
 if (isMacOS) {
@@ -60,7 +61,7 @@ if (isMacOS) {
 
 
 if (!(window.WebAssembly)) {
-    if (isIOS && isWebApp) {
+    if (isIOS) {
         alert(`
 You have lockdown mode enabled that disables WebAssembly and prevents the app from running. 
 
